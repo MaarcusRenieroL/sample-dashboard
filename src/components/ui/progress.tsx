@@ -29,9 +29,7 @@ const Progress = React.forwardRef<
 ));
 Progress.displayName = ProgressPrimitive.Root.displayName;
 
-export { Progress };
-
-export const CircleProgress = React.forwardRef<
+const CircleProgress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
 >(({ className, value, ...props }, ref) => (
@@ -49,3 +47,7 @@ export const CircleProgress = React.forwardRef<
     <div className="text-white">{`${value || 0}%`}</div>
   </ProgressPrimitive.Root>
 ));
+
+CircleProgress.displayName = "CircleProgress";
+
+export { Progress, CircleProgress };

@@ -16,7 +16,6 @@ type Props = {
 export const NavLinks: FC<Props> = ({ locale }) => {
   const pathname = usePathname();
   const { isCollapsed } = useSidebarStore();
-  console.log(pathname);
   return (
     <div className="space-y-5 flex flex-col items-start">
       {NAVLINKS.map((link) => {

@@ -126,7 +126,9 @@ export const Account: FC = () => {
         <DropdownMenuSeparator />
         <div className="p-2 space-y-3">
           <p>Work Status</p>
-          <DropdownMenuCheckboxItem>Don't Disturb</DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem>
+            Don&apos;t Disturb
+          </DropdownMenuCheckboxItem>
           <div className="flex items-center justify-evenly">
             <DropdownMenuCheckboxItem>On</DropdownMenuCheckboxItem>
             <DropdownMenuCheckboxItem>Off</DropdownMenuCheckboxItem>

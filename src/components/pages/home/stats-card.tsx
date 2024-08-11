@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FC } from "react";
 import { Card, CardFooter, CardHeader, CardTitle } from "~/components/ui/card";
 
@@ -17,10 +18,12 @@ export const StatsCard: FC<Props> = ({
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
       <Card className="h-32 relative text-white w-full">
-        <img
+        <Image
           src="/assets/total-tasks.png"
           className="w-full h-32 object-cover rounded-lg"
           alt="total-task"
+          width={100}
+          height={100}
         />
         <div className="absolute top-0 left-0 w-full">
           <CardHeader className="w-full">
@@ -31,10 +34,12 @@ export const StatsCard: FC<Props> = ({
       </Card>
 
       <Card className="h-32 relative text-white w-full">
-        <img
+        <Image
           src="/assets/completed-tasks.png"
           className="w-full h-32 object-cover rounded-lg"
           alt="total-task"
+          width={100}
+          height={100}
         />
         <div className="absolute top-0 left-0 w-full">
           <CardHeader className="w-full">
@@ -45,10 +50,12 @@ export const StatsCard: FC<Props> = ({
       </Card>
 
       <Card className="h-32 relative text-white w-full">
-        <img
+        <Image
           src="/assets/starred-tasks.png"
           className="w-full h-32 object-cover rounded-lg"
           alt="total-task"
+          width={100}
+          height={100}
         />
         <div className="absolute top-0 left-0 w-full">
           <CardHeader className="w-full">
@@ -59,10 +66,12 @@ export const StatsCard: FC<Props> = ({
       </Card>
 
       <Card className="h-32 relative text-white w-full">
-        <img
+        <Image
           src="/assets/stuck-tasks.png"
           className="w-full h-32 object-cover rounded-lg"
           alt="total-task"
+          width={100}
+          height={100}
         />
         <div className="absolute top-0 left-0 w-full">
           <CardHeader className="w-full">
