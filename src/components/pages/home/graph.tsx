@@ -37,7 +37,7 @@ export const Graph: FC = () => {
     { month: "June", desktop: 214, mobile: 140 },
   ];
   return (
-    <Card>
+    <Card className="md:col-span-2">
       <CardHeader>
         <CardTitle>Area Chart - Stacked</CardTitle>
         <CardDescription>
@@ -45,7 +45,7 @@ export const Graph: FC = () => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig}>
+        <ChartContainer className="h-52 w-full" config={chartConfig}>
           <AreaChart
             accessibilityLayer
             data={chartData}

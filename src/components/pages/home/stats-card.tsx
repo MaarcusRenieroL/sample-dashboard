@@ -6,7 +6,6 @@ type Props = {
   completedTasks: number;
   starredTasks: number;
   stuckTasks: number;
-  runningTasks: number;
 };
 
 export const StatsCard: FC<Props> = ({
@@ -14,39 +13,63 @@ export const StatsCard: FC<Props> = ({
   completedTasks,
   starredTasks,
   stuckTasks,
-  runningTasks,
 }) => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-10">
-      <Card>
-        <CardHeader>
-          <CardTitle>Total Tasks</CardTitle>
-        </CardHeader>
-        <CardFooter>{totalTasks}</CardFooter>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <Card className="h-32 relative text-white w-full">
+        <img
+          src="/assets/total-tasks.png"
+          className="w-full h-32 object-cover rounded-lg"
+          alt="total-task"
+        />
+        <div className="absolute top-0 left-0 w-full">
+          <CardHeader className="w-full">
+            <CardTitle>Total Tasks</CardTitle>
+          </CardHeader>
+          <CardFooter className="w-full">{totalTasks}</CardFooter>
+        </div>
       </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>Completed Tasks</CardTitle>
-        </CardHeader>
-        <CardFooter>{completedTasks}</CardFooter>
+
+      <Card className="h-32 relative text-white w-full">
+        <img
+          src="/assets/completed-tasks.png"
+          className="w-full h-32 object-cover rounded-lg"
+          alt="total-task"
+        />
+        <div className="absolute top-0 left-0 w-full">
+          <CardHeader className="w-full">
+            <CardTitle>Completed Tasks</CardTitle>
+          </CardHeader>
+          <CardFooter className="w-full">{completedTasks}</CardFooter>
+        </div>
       </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>Starred Tasks</CardTitle>
-        </CardHeader>
-        <CardFooter>{starredTasks}</CardFooter>
+
+      <Card className="h-32 relative text-white w-full">
+        <img
+          src="/assets/starred-tasks.png"
+          className="w-full h-32 object-cover rounded-lg"
+          alt="total-task"
+        />
+        <div className="absolute top-0 left-0 w-full">
+          <CardHeader className="w-full">
+            <CardTitle>Starred Tasks</CardTitle>
+          </CardHeader>
+          <CardFooter className="w-full">{starredTasks}</CardFooter>
+        </div>
       </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>Stuck Tasks</CardTitle>
-        </CardHeader>
-        <CardFooter>{stuckTasks}</CardFooter>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>Running Tasks</CardTitle>
-        </CardHeader>
-        <CardFooter>{runningTasks}</CardFooter>
+
+      <Card className="h-32 relative text-white w-full">
+        <img
+          src="/assets/stuck-tasks.png"
+          className="w-full h-32 object-cover rounded-lg"
+          alt="total-task"
+        />
+        <div className="absolute top-0 left-0 w-full">
+          <CardHeader className="w-full">
+            <CardTitle>Stuck Tasks</CardTitle>
+          </CardHeader>
+          <CardFooter className="w-full">{stuckTasks}</CardFooter>
+        </div>
       </Card>
     </div>
   );

@@ -22,7 +22,7 @@ export const ProjectCard: FC = () => {
           <span>Progress</span>
           <span>90%</span>
         </div>
-        <Progress value={90} className="w-full" />
+        <Progress value={90} className="w-full" indicatorColor="bg-blue-500" />
         <p className="mt-2">1 Hour</p>
         <div className="mt-4 space-y-2">
           <p>Detail Task</p>
@@ -33,8 +33,8 @@ export const ProjectCard: FC = () => {
           </ul>
         </div>
       </CardContent>
-      <CardFooter>
-        <Button>Go To Detail</Button>
+      <CardFooter className="w-full">
+        <Button className="w-full bg-blue-500">Go To Detail</Button>
       </CardFooter>
     </Card>
   );

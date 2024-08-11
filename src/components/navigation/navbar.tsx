@@ -3,7 +3,6 @@
 import { FC } from "react";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetFooter,
   SheetHeader,
@@ -13,11 +12,12 @@ import {
 import { Button } from "../ui/button";
 import { Bell, HelpCircle, MenuIcon, Search, Settings } from "lucide-react";
 import { Account } from "./account-nav";
-import { LanugageSwitcher } from "./language-switcher";
+import { LanguageSwitcher } from "./language-switcher";
 import { NAVLINKS } from "~/lib/constants";
 import Link from "next/link";
 import { cn } from "~/lib/utils";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export const Navbar: FC = () => {
   const pathname = usePathname();
@@ -62,7 +62,7 @@ export const Navbar: FC = () => {
             </SheetFooter>
           </SheetContent>
         </Sheet>
-        <h1 className="text-2xl font-bold uppercase">Dashboard</h1>
+        <Image src="/assets/logo.png" alt="logo" width={200} height={200} />
       </div>
       <div className="flex items-center justify-end space-x-5">
         <div className="hidden md:flex items-center space-x-5">
@@ -71,7 +71,7 @@ export const Navbar: FC = () => {
           <Settings className="h-6 w-6" />
           <HelpCircle className="h-6 w-6" />
         </div>
-        <LanugageSwitcher />
+        <LanguageSwitcher />
         <Account name="name" email="email" />
       </div>
     </div>
