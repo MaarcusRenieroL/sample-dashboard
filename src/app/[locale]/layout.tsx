@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "~/components/navigation/navbar";
 import { SideNav } from "~/components/navigation/side-nav";
+import { ThemeProvider } from "~/components/theme-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,13 +25,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Navbar locale={locale} />
-        <main className="flex gap-5">
-          <div className="hidden md:flex">
-            <SideNav locale={locale} />
-          </div>
-          <div className="p-10 w-full">{children}</div>
-        </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar locale={locale} />
+          <main className="flex gap-5">
+            <div className="hidden md:flex">
+              <SideNav locale={locale} />
+            </div>
+            <div className="p-10 w-full">{children}</div>
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

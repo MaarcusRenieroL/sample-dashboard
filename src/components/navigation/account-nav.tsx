@@ -31,8 +31,10 @@ import {
   User,
   Users,
 } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export const Account: FC = () => {
+  const { setTheme } = useTheme();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -101,11 +103,11 @@ export const Account: FC = () => {
           </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
             <DropdownMenuSubContent>
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("light")}>
                 <Sun className="mr-2 h-4 w-4" />
                 <span>Light</span>
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("dark")}>
                 <Moon className="mr-2 h-4 w-4" />
                 <span>Dark</span>
               </DropdownMenuItem>

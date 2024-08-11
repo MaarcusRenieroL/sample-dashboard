@@ -86,7 +86,7 @@ export const Navbar: FC<Props> = ({ locale }) => {
           <HelpCircle className="h-6 w-6" />
         </div>
         <LanguageSwitcher />
-        <Account name="name" email="email" />
+        <Account />
       </div>
     </div>
   );
