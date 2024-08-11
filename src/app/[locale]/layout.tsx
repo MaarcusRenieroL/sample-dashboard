@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "~/components/navigation/navbar";
+import { SideNav } from "~/components/navigation/side-nav";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -15,14 +16,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Navbar />
-        <main className="p-10">{children}</main>
+        <Navbar locale={locale} />
+        <main className="flex gap-5">
+          <div className="hidden md:flex">
+            <SideNav locale={locale} />
+          </div>
+          <div className="p-10 w-full">{children}</div>
+        </main>
       </body>
     </html>
   );
